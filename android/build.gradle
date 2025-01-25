@@ -37,8 +37,20 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
+    // Adding compileOptions for Java compatibility
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    // Adding Kotlin options for JVM target 1.8
+    kotlinOptions {
+        jvmTarget = '17'  // Ensure this is set to 1.8 for compatibility
+    }
+    
     defaultConfig {
-        minSdk 16
+        minSdk 23
         targetSdk 34
 
         consumerProguardFiles 'consumer-rules.pro'
